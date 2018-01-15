@@ -2,7 +2,8 @@ import AWS from "aws-sdk";
 import credentials from "../config/credentials";
 
 AWS.config.update({
-  credentials
+  credentials,
+  endpoint: "http://localhost:8000"
 });
 
 export default AWS.DynamoDB();
