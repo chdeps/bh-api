@@ -1,3 +1,3 @@
 # bh-api
 
-An api in express to scrape the web for wind prevision data with dynamoDB database
+An js API to scrape the WEB for WIND previsions!
