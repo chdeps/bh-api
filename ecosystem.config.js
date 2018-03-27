@@ -1,7 +1,8 @@
 module.exports = {
     apps: [{
         name: 'bh-api',
-        script: 'lsdslkjf ./src/index.js'
+        script: 'npm',
+        args: 'start'
     }],
     deploy: {
         staging: {
