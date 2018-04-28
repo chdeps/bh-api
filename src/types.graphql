@@ -3,5 +3,9 @@ type Schema {
     mutation: Mutation
 }
 
-type Query {}
-type Mutation {}
+type Query{
+    _:Boolean
+}
+type Mutation{
+    _:Boolean
+}

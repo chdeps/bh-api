@@ -41,8 +41,14 @@ graphql.use(authMiddleware);
 graphql.use(router.routes());
 graphql.use(router.allowedMethods());
 
+
+
+const app = new Koa();
+app.use(koaBodyParser());
+app.use(mount(graphql));
+
 const engine = new ApolloEngine({
   apiKey: 'service:chdeps-1009:qlXMs7LdxWcIvFYoTna9rg',
 });
 
-engine.listen({ port: PORT });
+engine.listen({ port: PORT, koaApp: app });
