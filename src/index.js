@@ -3,6 +3,7 @@
 import 'babel-polyfill';
 import Koa from 'koa';
 import KoaRouter from 'koa-router';
+import koaBodyParser from 'koa-bodyparser';
 import koaPlayground from 'graphql-playground-middleware-koa';
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa';
 import { ApolloEngine } from 'apollo-engine';
@@ -37,18 +38,14 @@ router.all(
 );
 
 const graphql = new Koa();
+graphql.use(koaBodyParser());
 graphql.use(authMiddleware);
 graphql.use(router.routes());
 graphql.use(router.allowedMethods());
 
 
-
-const app = new Koa();
-app.use(koaBodyParser());
-app.use(mount(graphql));
-
 const engine = new ApolloEngine({
   apiKey: 'service:chdeps-1009:qlXMs7LdxWcIvFYoTna9rg',
 });
 
-engine.listen({ port: PORT, koaApp: app });
+engine.listen({ port: PORT, koaApp: graphql });

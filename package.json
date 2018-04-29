@@ -23,6 +23,7 @@
     "graphql-tag": "^2.9.1",
     "graphql-tools": "^2.16.0",
     "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
     "puppeteer": "^1.0.0"
   },
