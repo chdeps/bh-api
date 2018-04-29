@@ -1,0 +1,11 @@
+type Schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query{
+    _:Boolean
+}
+type Mutation{
+    _:Boolean
+}

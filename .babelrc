@@ -1,1 +1,4 @@
-{ "presets": ["env"] }
+{
+  "presets": ["env"],
+  "plugins": ["graphql-tag", "inline-import-graphql-ast"]
+}
