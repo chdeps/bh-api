@@ -55,5 +55,7 @@ export default class Windguru {
         WAVE: waveHeight,
       });
     }
+
+    return result;
   };
 }
