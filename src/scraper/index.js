@@ -1,10 +1,15 @@
 import puppeteer from 'puppeteer';
 import Windguru from './windguru';
 
-export default async () => {
+const extractWindData = async () => {
   const browser = await puppeteer.launch();
   //TODO : Create mapping object with spots ids
-  const data = await Windguru.extract(browser, '110');
+  const windguru = await Windguru.extract(browser, '110');
+  //TODO : Save into DB
   await browser.close();
-  return data;
+  return { windguru };
+};
+
+export default {
+  extractWindData,
 };

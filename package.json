@@ -8,7 +8,6 @@
   "scripts": {
     "local": "babel-node ./src/index.js",
     "start": "rm -rf lib/* && babel -d ./lib ./src && node ./lib/index.js",
-    "scrape": "babel-node ./src/scraper/index.js",
     "restart": "pm2 startOrRestart ecosystem.config.js",
     "deploy": "pm2 deploy ecosystem.config.js staging",
     "test": "echo \"Error: no test specified\" && jjexit 1",
@@ -22,9 +21,11 @@
     "graphql-playground-middleware-koa": "^1.5.1",
     "graphql-tag": "^2.9.1",
     "graphql-tools": "^2.16.0",
+    "knex": "^0.14.6",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
+    "pg": "^7.4.3",
     "puppeteer": "^1.0.0"
   },
   "devDependencies": {
